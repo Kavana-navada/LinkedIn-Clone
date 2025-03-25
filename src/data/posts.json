@@ -1,0 +1,59 @@
+[
+    {
+      "id": "post1",
+      "userId": "user2",
+      "content": "Just launched our new product feature! Check it out at google.com/new-feature",
+      "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      "likes": 124,
+      "comments": [
+        {
+          "id": "comment1",
+          "userId": "user3",
+          "content": "This looks amazing! Can't wait to try it out.",
+          "createdAt": "2025-03-22T14:30:00Z"
+        }
+      ],
+      "createdAt": "2025-03-22T10:30:00Z"
+    },
+    {
+      "id": "post2",
+      "userId": "user1",
+      "content": "Just published my research findings on user behavior when interacting with modal dialogs. Some surprising insights!",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      "likes": 42,
+      "comments": [
+        {
+          "id": "comment2",
+          "userId": "user3",
+          "content": "This looks amazing!.",
+          "createdAt": "2025-03-23T14:30:00Z"
+        }
+      ],
+      "createdAt": "2025-03-23T11:20:00Z"
+    },
+    {
+      "id": "post3",
+      "userId": "user5",
+      "content": "Excited to share that we've just released a new design system at Apple. It's been a challenging but rewarding project.",
+      "likes": 88,
+      "comments": [],
+      "createdAt": "2025-03-22T08:45:00Z"
+    },
+    {
+      "id": "post4",
+      "userId": "user4",
+      "content": "Managing stocks can be overwhelming, but what if you had a powerful, real-time, and intuitive tool to simplify it? That’s exactly why we built– a next-gen stock tracking and investment companion",
+      "video": "https://videos.pexels.com/video-files/7579564/7579564-sd_960_506_25fps.mp4",
+      "likes": 12,
+      "comments": [
+        {
+          "id": "comment3",
+          "userId": "user5",
+          "content": "Great",
+          "createdAt": "2025-03-23T14:30:00Z"
+        }
+      ],
+      "createdAt": "2025-03-23T11:20:00Z"
+    }
+  ]
+  

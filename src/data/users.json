@@ -1,0 +1,86 @@
+[
+    {
+      "id": "user1",
+      "name": "Ravindra",
+      "bioheadline":"UI/UX Design | UX Architect | Product Design",
+      "headline": "Product Designer at Apple",
+      "avatar": "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1887&q=80",
+
+      "backgroundImage": "https://img.freepik.com/premium-photo/girl-write-open-white-book-accounting-minimal-clean-light-blue-desk-with-laptop-accessories-copy-space-flat-lay-top-view-mock-up_315337-7591.jpg",
+      "connections": 542,
+      "bio": "Creating user-centered designs at Apple. Passionate about simplicity and crafting experiences that delight users.",
+      "companylogo":"https://logo.clearbit.com/apple.com",
+      "company": "Apple",
+      "location": "Mumbai,India",
+      "profileview":"60",
+      "postimpressions":"3",
+      "searchapperences":"7"
+
+    },
+    {
+      "id": "user2",
+      "name": "Sarah Johnson",
+      "bioheadline":"Full Stack | Web Application | Mobile Application ",
+      "headline": "Software Engineer at Google",
+      "backgroundImage": "https://ceomichaelhr.com/wp-content/uploads/2022/08/background-banner-1024x256.jpg",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=1887&q=80",
+      "bio": "Creating user-centered designs at Apple. Passionate about simplicity and crafting experiences that delight users.",
+      "connections": 428,
+      "companylogo":"https://logo.clearbit.com/google.com",
+      "company": "Google",
+      "location": "Bengaluru, India",
+      "profileview":"20",
+      "postimpressions":"13",
+      "searchapperences":"17"
+    },
+    {
+        "id": "user3",
+        "name": "Sanjay",
+        "bioheadline":"Full Stack | .NET Frameworks | Web Application",
+        "headline": "Software Engineer at Microsoft",
+        "avatar": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&auto=format&fit=crop&w=1887&q=80",
+        "backgroundImage": "https://i.pinimg.com/736x/8b/00/fc/8b00fc811fe3032996c96154291bc099.jpg",
+        "bio": "Creating user-centered designs at Apple. Passionate about simplicity and crafting experiences that delight users.",
+        "connections": 228,
+        "companylogo":"https://logo.clearbit.com/microsoft.com",
+        "company": "Microsoft",
+        "location": "Bengaluru, India",
+        "profileview":"12",
+        "postimpressions":"0",
+        "searchapperences":"9"
+      },
+      {
+        "id": "user4",
+        "name": "Rashimka",
+        "bioheadline":"Figma | Frontend Developer | React JS",
+        "headline": "UI UX developer at Google",
+        "avatar":  "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=1961&q=80",
+        "backgroundImage": "https://cdn.shopify.com/s/files/1/0066/4574/3686/files/Building_Design_LinkedIn_Cover_Photo.png?v=1627912075",
+        "bio": "Creating user-centered designs at Apple. Passionate about simplicity and crafting experiences that delight users.",
+        "connections": 108,
+        "companylogo":"https://logo.clearbit.com/google.com",
+        "company": "Google",
+        "location": "Bengaluru, India",
+        "profileview":"50",
+        "postimpressions":"31",
+        "searchapperences":"7"
+      },
+      {
+        "id": "user5",
+        "name": "Ravish",
+        "bioheadline":"Leadership | Problem Solving | Customer Service",
+        "headline": "Manager at Netflix",
+        "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=1887&q=80",
+        "backgroundImage": "https://ceomichaelhr.com/wp-content/uploads/2022/08/linkedin-banner-Nonprofits-1024x256.jpg",
+        "bio": "Creating user-centered designs at Apple. Passionate about simplicity and crafting experiences that delight users.",
+        "connections": 50,
+        "companylogo":"https://logo.clearbit.com/netflix.com",
+        "company": "MyTEch",
+        "location": "Manglore, India",
+        "profileview":"16",
+        "postimpressions":"4",
+        "searchapperences":"17"
+      }
+
+  ]
+  

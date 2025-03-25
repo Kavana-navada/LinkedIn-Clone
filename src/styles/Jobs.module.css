@@ -1,0 +1,91 @@
+
+.container {
+    display: flex;
+    justify-content: center;
+   padding-top:60px;
+    background-color:#f7faf9;
+    
+  }
+
+.searchInput:focus{
+    box-shadow: none !important;
+    
+}
+.jobsearch,
+.jobinfo{
+    padding: 20px;
+    border:1px solid #ded9d9;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    }  
+.cardBody{
+    background-color: rgb(250, 253, 253);
+    
+    border-radius:5px;
+}
+.animatedCard {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .animatedCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+.icon{
+   
+    vertical-align:middle;
+    top:-2px;
+    position: relative;
+    margin-right: 5px !important;
+}
+.viewDetails{
+    text-decoration: none;
+    
+}
+.viewDetails:hover{
+    border: 1px solid #ded9d9 !important;
+}
+.modal{
+    z-index: 3000 !important;
+    font-size: 14px;
+    margin-top: 2.5rem !important;
+}
+.modal p{
+    margin-bottom: 0.5rem !important;
+
+}
+.savebtn,
+.applybtn{
+    width: 120px;
+    border-radius: 20px !important;
+   
+}
+.savebtn:hover{
+    border:2px solid  darkblue;
+    color: #000d82;
+    background-color: aliceblue !important;
+    
+}
+.applybtn:hover{
+    background-color: darkblue;
+}
+.modalFooter{
+    justify-content: center;
+    gap: 20px;
+}
+
+@media (max-width:600px){
+    .searchInput{
+        font-size: 12px;
+    }
+    .jobTop{
+        flex-direction: column;
+        align-items:stretch !important;
+        gap: 10px;
+    }
+    .modal{
+        font-size: 12px;
+    }
+}

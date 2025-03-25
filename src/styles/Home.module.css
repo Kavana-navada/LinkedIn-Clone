@@ -1,0 +1,326 @@
+/* Updated LinkedIn-style Home.module.css */
+
+.container {
+  display: flex;
+  justify-content: center;
+ padding-top:80px;
+  background-color:#f7faf9;
+}
+
+.row {
+  display: flex;
+  width: 84%;
+  
+}
+
+/* Sidebar Styling */
+.sidebar {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ded9d9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.userCard {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ded9d9;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  
+}
+
+
+.userCard img {
+  
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 10px;
+
+}
+
+.userInfo{
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.userCard p {
+  margin: 0;
+  font-weight: bold;
+}
+
+
+.connectButton{
+  background-color: white !important;
+  border: 2px solid blue !important;
+  border-radius: 20px !important;
+  color:blue;
+  width: 180px !important;
+  margin-top: 10px;
+  padding: 5px 10px;
+}
+
+.connectButton:hover{
+  border: 2px solid darkblue;
+  color: darkblue;
+  background-color:aliceblue !important;
+}
+.viewMoreButton {
+  width: 100%;
+  background-color:transparent;
+
+  padding: 8px;
+  border: none;
+
+  cursor: pointer;
+
+}
+.viewMoreButton:hover{
+  color:#0073b1;
+}
+.btnicon{
+   
+  vertical-align:middle;
+  top:-2px;
+  position: relative;
+}
+
+/* Post Feed Styling */
+.postCard {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  border: 1px solid #ded9d9;
+}
+
+.postHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.postHeader img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.postUser {
+  font-weight: bold;
+}
+
+.postTimestamp {
+  font-size: 12px;
+  color: gray;
+}
+
+.postContent {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.postImage {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* Post Actions */
+.postActions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  
+}
+
+.postActions button {
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: gray;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 5px 10px;
+  
+}
+
+
+  
+
+.postActions button:hover {
+  color: #0073b1;
+  background-color: #f6f6f6;
+  border-radius: 5px;
+}
+
+.actionButton{
+  vertical-align:middle;
+ 
+  margin-bottom: 5px;
+  
+}
+
+
+/* Modal Styling */
+.modalDialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  z-index: 3000;
+}
+.modalHeader {
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: none;
+  
+}
+.modalBody {
+ 
+  border-radius: 0px 0px 12px 12px;
+  padding: 0px 10px; 
+}
+
+/* Comment Box */
+.commentContainer{
+  max-height: 300px; /* Fixed height */
+  overflow-y: auto; /* Enable scrolling */
+
+  padding: 0px;
+
+}
+.commentItem {
+  display: flex;
+  
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px;
+  
+  margin-bottom: 10px;
+  background: #f6f6f6;
+  border-radius: 5px;
+  
+}
+
+.commentAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.commentUser {
+  font-weight: bold;
+  color: #333;
+}
+
+.commentDate {
+  font-size: 12px;
+  color: gray;
+}
+
+.commentText {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #444;
+  word-break: break-word;  
+  white-space: pre-wrap;   
+  overflow-wrap: break-word;  
+  display: block;          
+  max-width: 100%;         
+}
+
+.commentInput {
+  width: 98%;
+  height: 60px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  border-radius: 5px;
+  resize: none;
+  outline: none;
+ 
+}
+
+/* Modal Footer */
+.modalFooter {
+  
+  padding: 12px;
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #ddd;
+}
+
+.modalFooter button {
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.postbtn{
+  width: 150px !important;
+  border-radius: 20px !important;
+  font-weight: 600;
+
+}
+
+.postbtn:hover{
+  background-color: darkblue;
+}
+
+.noComments {
+  text-align: center;
+  color: gray;
+}
+
+
+@media (max-width: 900px) {
+  .row {
+    display: flex;
+    width: 95%;
+    
+  }
+
+  .sidebar {
+    padding: 10px;
+  }
+
+
+  .userCard img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+  }
+
+  .connectButton {
+    width: 100%;
+  }
+
+  
+}
+@media (max-width:320px) {
+  .postActions button{
+    font-size: 12px;
+    padding: 5px 5px;
+  }
+
+  
+}

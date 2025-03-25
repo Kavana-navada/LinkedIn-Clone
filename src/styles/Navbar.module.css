@@ -1,0 +1,135 @@
+/* Full-width Navbar */
+.navbar {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  padding: 0 20px;
+  background: white;
+  position:fixed;
+  z-index: 2000;
+}
+
+.logo img {
+  height: 35px;
+}
+
+.searchContainer {
+  background-color: #f8eeee;
+  padding: 2px 10px !important;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  
+}
+
+.searchIcon {
+  color: gray;
+  margin-right: 5px;
+}
+
+.searchBar {
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+
+
+.navItem {
+  display: flex;
+  flex-direction: column !important;  
+  align-items: center;
+  color: #666;
+  text-decoration: none;
+  font-size: 12px;
+  margin: 0 10px;
+  position: relative;
+  border-bottom: 2px solid transparent;
+ 
+}
+
+.navIcon {
+  font-size: 20px;
+  margin-right: 5px; 
+}
+
+.navItem:hover {
+  color: #0a66c2;
+  border-bottom: 2px solid blue;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  background-color: #eef3f8;
+  padding: 5px 10px;
+  border-radius: 5px;
+  
+}
+
+.searchIcon {
+  color: gray;
+  margin-right: 5px;
+}
+
+/* Notification Badge */
+/* .notificationBadge {
+  background-color: red;
+  color: white;
+  font-size: 10px;
+  border-radius: 50%;
+  padding: 2px 6px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+} */
+
+ 
+
+
+@media (min-width: 900px) {
+  .topcontainer {
+    margin: 0px 100px !important; 
+  }
+  
+}
+
+@media (max-width: 451px) {
+  .logo img {
+    height: 30px;
+  }
+  .searchBar {
+    display: none;
+  }
+
+  .navbar-nav {
+    flex-direction: row !important; 
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100%;
+    gap: 5px !important; 
+  }
+
+  .navItem {
+    display: flex !important;
+    flex-direction: column !important; 
+    align-items: center !important;
+    text-align: center !important;
+    font-size: 10px !important;
+    white-space: nowrap;
+  }
+
+  .navIcon {
+    font-size: 20px !important;
+    display: block !important;
+   
+    margin: -2px;
+  }
+  .navIconsearch{
+    color:#666;
+  }
+  
+  .navItem span {
+    display: none;
+  }
+  
+}

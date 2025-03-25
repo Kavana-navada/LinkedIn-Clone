@@ -1,0 +1,71 @@
+[
+    {
+      "id": "job1",
+      "title": "Senior Frontend Developer",
+      "company": "Netflix",
+      "logo": "https://logo.clearbit.com/netflix.com",
+      "location": "Bengaluru, India",
+      "type": "Full-time",
+      "description": "We're looking for a Senior Frontend Developer to join our team...",
+      "requirements": [
+        "5+ years of experience with React",
+        "Strong understanding of web performance",
+        "Experience with responsive design",
+        "Knowledge of modern CSS and JavaScript"
+      ],
+      "salary": "₹12,00,000 - ₹16,00,000",
+      "postedAt": "2025-02-10T09:00:00Z"
+    },
+    {
+      "id": "job2",
+      "title": "UI/UX Designer",
+      "company": "Apple",
+      "logo": "https://logo.clearbit.com/apple.com",
+      "location": "Hyderbad, India",
+      "type": "Full-time",
+      "description": "Join the design team at Apple to create beautiful and intuitive user experiences...",
+      "requirements": [
+        "3+ years of experience in product design",
+        "Proficiency in Figma or Sketch",
+        "Experience with design systems",
+        "Portfolio showcasing your work"
+      ],
+      "salary": "₹10,00,000 - ₹15,00,000",
+      "postedAt": "2025-01-08T10:15:00Z"
+    },
+    {
+      "id": "job3",
+      "title": "Product Manager",
+      "company": "Google",
+      "logo": "https://logo.clearbit.com/google.com",
+      "location": "Mumbai, India",
+      "type": "Full-time",
+      "description": "We're seeking a talented Product Manager to lead product development initiatives...",
+      "requirements": [
+        "3+ years of product management experience",
+        "Strong analytical skills",
+        "Excellent communication abilities",
+        "Technical background preferred"
+      ],
+      "salary": "₹13,00,000 - ₹18,00,000",
+      "postedAt": "2025-02-27T14:30:00Z"
+    },
+    {
+      "id": "job4",
+      "title": "Data Scientist",
+      "company": "Microsoft",
+      "logo": "https://logo.clearbit.com/microsoft.com",
+      "location": "Mumbai, India",
+      "type": "Part-time",
+      "description": "Join our data science team to develop innovative AI solutions...",
+      "requirements": [
+        "MS or PhD in Computer Science, Statistics, or related field",
+        "Experience with machine learning frameworks",
+        "Strong programming skills in Python",
+        "Background in natural language processing a plus"
+      ],
+      "salary": "₹3,50,000 - ₹3,75,000",
+      "postedAt": "2025-03-14T11:45:00Z"
+    }
+  ]
+  

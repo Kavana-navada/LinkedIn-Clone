@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    justify-content: center;
+   padding-top: 60px;
+    background-color:#f7faf9;
+    min-height: 100vh;
+
+  }
+ 
+.removeButton{
+    background-color: white !important;
+    border: 2px solid red !important;
+    border-radius: 20px !important;
+    color:red;
+    padding: 5px 10px;
+}
+.removeButton:hover{
+    background-color: lightcoral !important;
+    color: white !important;
+}
+.btnicon{
+   
+    vertical-align:middle;
+    top:-2px;
+    position: relative;
+    
+}
