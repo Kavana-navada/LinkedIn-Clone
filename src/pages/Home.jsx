@@ -194,7 +194,7 @@ const Home = () => {
         <div className="text-center">
           <Spinner animation="border" style={{ marginTop: "200px" }} />
           <p>Loading</p>
-        </div>
+        </div>  
       ) : (
         <div>
           <div className={styles.container}>
@@ -210,7 +210,7 @@ const Home = () => {
                     (user && user.name.toLowerCase().includes(searchTerm.toLowerCase()))
                   );
                 }).length === 0 ? (
-                  <div className={`text-center ${styles.postCard}`}>
+                  <div className={`text-center ${styles.postCard} minHeight`}>
                     No posts match the search.
                   </div>
                 ) : (
@@ -304,6 +304,7 @@ const Home = () => {
             show={showModal}
             onHide={() => setShowModal(false)}
             className={styles.modalDialog}
+            centered
           >
             <Modal.Header closeButton className={styles.modalHeader}>
               <Modal.Title>Comments</Modal.Title>

@@ -52,7 +52,7 @@
 .modal{
     z-index: 3000 !important;
     font-size: 14px;
-    margin-top: 2.5rem !important;
+    
 }
 .modal p{
     margin-bottom: 0.5rem !important;
@@ -88,6 +88,6 @@
     }
     .modal{
         font-size: 12px;
-        margin-top: 3.5rem !important;
+       
     }
 }

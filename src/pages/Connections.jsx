@@ -58,7 +58,7 @@ const Connections = () => {
             {/* Left Panel - My Connections */}
             <Col lg={8} md={12}>
               <Card className="p-3 shadow-sm">
-                <Card.Title>My Connections ({connections.length})</Card.Title>
+                <Card.Title>My Connections ({filteredConnections.length})</Card.Title>
                 {Array.isArray(connections) && connections.length === 0 ? (
                   <Card.Text className="text-muted text-center p-3 border rounded">
                     You don't have any connections yet. Add connections from the

@@ -106,6 +106,9 @@
   margin-bottom: 20px;
   border: 1px solid #ded9d9;
 }
+.postCard:empty {
+  border: 10px solid red;
+}
 
 .postHeader {
   display: flex;
@@ -183,7 +186,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 60px;
+  
   z-index: 3000;
 }
 .modalHeader {
@@ -296,6 +299,7 @@
 @media (max-width: 900px) {
   .row {
     display: flex;
+    
     width: 95%;
     
   }
@@ -316,6 +320,11 @@
   }
 
   
+}
+@media (max-width: 767px) {
+  .row {
+    flex-flow: column;
+}
 }
 @media (max-width:320px) {
   .postActions button{
