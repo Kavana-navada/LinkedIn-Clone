@@ -31,7 +31,7 @@ const SuggestedConnections = ({ connections = {}, handleConnect, currentUsername
     <div className={styles.sidebar}>
       <h5 className="text-center mb-3">People You May Know</h5>
       {suggestedUsers.length === 0 ? (
-        <p className="text-center"> {searchTerm ? "No connections match your search" : "No new connections available"}</p>
+        <p className="text-center" style={{color:"grey"}}> {searchTerm ? "No connections match your search" : "No new connections available"}</p>
       ) : (
         suggestedUsers.map((user) => (
           <div key={user.id} className={styles.userCard}>

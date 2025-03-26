@@ -210,7 +210,7 @@ const Home = () => {
                     (user && user.name.toLowerCase().includes(searchTerm.toLowerCase()))
                   );
                 }).length === 0 ? (
-                  <div className={`text-center ${styles.postCard} minHeight`}>
+                  <div className={`text-center ${styles.postCard} minHeight`} style={{color:"grey"}}>
                     No posts match the search.
                   </div>
                 ) : (
