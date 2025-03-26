@@ -5,9 +5,9 @@ import { Container, Row, Col, Card, Button, Image } from "react-bootstrap";
 import Navigationbar from "../components/Navigationbar";
 import SuggestedConnections from "../components/SuggestedConnections";
 import styles from "../styles/Connections.module.css";
+import { useSelector } from "react-redux";
 
 const Connections = () => {
-  
   const [connections, setConnections] = useState(() => {
     try {
       const storedConnections = JSON.parse(localStorage.getItem("connections"));
@@ -19,6 +19,14 @@ const Connections = () => {
       return [];
     }
   });
+
+  const searchTerm = useSelector((state) => state.search.searchTerm);
+  const filteredConnections = connections.filter(
+    (user) =>
+      searchTerm === "" ||
+      user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      user.headline.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   const handleConnect = (userId) => {
     const user = usersData.find((u) => u.id === userId);
@@ -43,7 +51,7 @@ const Connections = () => {
   return (
     <>
       <Navigationbar />
-     
+
       <div className={styles.container}>
         <Container className="mt-4">
           <Row className="gy-3">
@@ -56,9 +64,12 @@ const Connections = () => {
                     You don't have any connections yet. Add connections from the
                     "People You May Know" section.
                   </Card.Text>
+                ) : filteredConnections.length === 0 ? (
+                  <p className="text-center text-muted">
+                    No connections match your search.
+                  </p>
                 ) : (
-                  Array.isArray(connections) &&
-                  connections.map((user) => (
+                  filteredConnections.map((user) => (
                     <Card key={user.id} className="mb-3 p-2 border">
                       <div className="d-flex flex-column flex-sm-row align-items-center">
                         <Image
@@ -97,7 +108,6 @@ const Connections = () => {
           </Row>
         </Container>
       </div>
-          
     </>
   );
 };

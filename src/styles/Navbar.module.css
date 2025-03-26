@@ -6,25 +6,30 @@
   background: white;
   position:fixed;
   z-index: 2000;
+  height: 59px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2)
 }
 
 .logo img {
   height: 35px;
 }
 
-.searchContainer {
-  background-color: #f8eeee;
-  padding: 2px 10px !important;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  
-}
+
 
 .searchIcon {
   color: gray;
   margin-right: 5px;
 }
+.searchContainer {
+  display: flex;
+  align-items: center;
+  background-color: #eef3f8;
+  padding: 5px 10px;
+  border-radius: 5px;
+  
+}
+
+
 
 .searchBar {
   border: none;
@@ -36,8 +41,6 @@
   box-shadow: none;
   background-color: transparent;
 }
-
-
 
 .navItem {
   display: flex;
@@ -59,22 +62,10 @@
 
 .navItem:hover {
   color: #0a66c2;
-  border-bottom: 2px solid blue;
-}
-
-.searchContainer {
-  display: flex;
-  align-items: center;
-  background-color: #eef3f8;
-  padding: 5px 10px;
-  border-radius: 5px;
+  border-bottom: 3px solid blue;
   
 }
 
-.searchIcon {
-  color: gray;
-  margin-right: 5px;
-}
 
 
 /* Notification Badge */
@@ -88,9 +79,10 @@
   top: -5px;
   right: -5px;
 } */
-
- 
-
+.searchWrapper{
+  display: flex;
+  align-items: center;
+}
 
 @media (min-width: 900px) {
   .topcontainer {
@@ -103,9 +95,7 @@
   .logo img {
     height: 30px;
   }
-  .searchBar {
-    display: none;
-  }
+  
 
   .navbar-nav {
     flex-direction: row !important; 
@@ -138,4 +128,14 @@
     display: none;
   }
   
+}
+@media (max-width: 600px) {
+  
+  .searchWrapper{
+    margin: 5px;
+  }
+
+  .hideIcons {
+    display: none !important;
+  }
 }

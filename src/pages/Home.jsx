@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import Navigationbar from "../components/Navigationbar";
 import CreatePost from "../components/CreatePosts";
 import SuggestedConnections from "../components/SuggestedConnections";
@@ -27,6 +28,7 @@ const Home = () => {
   const [currentComments, setCurrentComments] = useState([]);
   const [commentText, setCommentText] = useState("");
   const [selectedPost, setSelectedPost] = useState(null);
+  const searchTerm = useSelector((state) => state.search.searchTerm);
   const [connections, setConnections] = useState(() => {
     try {
       return JSON.parse(localStorage.getItem("connections")) || {};
@@ -51,12 +53,6 @@ const Home = () => {
       setLoading(false);
     }, 300);
   }, []);
-
-  // const handleLike = (postId) => {
-  //   const updatedLikes = { ...likes, [postId]: (likes[postId] || 0) + 1 };
-  //   setLikes(updatedLikes);
-  //   localStorage.setItem("likes", JSON.stringify(updatedLikes));
-  // };
 
   const handleLike = (postId) => {
     let storedLikes = JSON.parse(localStorage.getItem("likes")) || {};
@@ -205,66 +201,92 @@ const Home = () => {
           <div className={styles.container}>
             <div className={`row ${styles.row}`}>
               {/* Left Section - Posts */}
-              
+
               <div className="col-md-8">
-              <CreatePost profileUrl="https://www.cgg.gov.in/wp-content/uploads/2017/10/dummy-profile-pic-male1.jpg" />
-                {posts.map((post) => {
+                <CreatePost profileUrl="https://www.cgg.gov.in/wp-content/uploads/2017/10/dummy-profile-pic-male1.jpg" />
+                {posts.filter((post) => {
                   const user = getUser(post.userId);
                   return (
-                    <div key={post.id} className={styles.postCard}>
-                      <div className={styles.postHeader}>
-                        <img
-                          src={user?.avatar}
-                          alt={user?.name}
-                          className={styles.postAvatar}
-                        />
-                        <div>
-                          <div className={styles.postUser}>{user?.name}</div>
-                          <div className={styles.postTimestamp}>
-                            {new Date(post.createdAt).toDateString()}
+                    post.content.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    (user && user.name.toLowerCase().includes(searchTerm.toLowerCase()))
+                  );
+                }).length === 0 ? (
+                  <div className={`text-center ${styles.postCard}`}>
+                    No posts match the search.
+                  </div>
+                ) : (
+                  posts
+                    .filter((post) => {
+                      const user = getUser(post.userId);
+                      return (
+                        post.content.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                        (user && user.name.toLowerCase().includes(searchTerm.toLowerCase()))
+                      );
+                    })
+                    .map((post) => {
+                      const user = getUser(post.userId);
+                      return (
+                        <div key={post.id} className={styles.postCard}>
+                          <div className={styles.postHeader}>
+                            <img
+                              src={user?.avatar}
+                              alt={user?.name}
+                              className={styles.postAvatar}
+                            />
+                            <div>
+                              <div className={styles.postUser}>
+                                {user?.name}
+                              </div>
+                              <div className={styles.postTimestamp}>
+                                {new Date(post.createdAt).toDateString()}
+                              </div>
+                            </div>
+                          </div>
+                          <div className={styles.postContent}>
+                            {post.content}
+                          </div>
+                          {post.image && (
+                            <img
+                              src={post.image}
+                              alt="Post"
+                              className={styles.postImage}
+                            />
+                          )}
+                          {post.video && (
+                            <video controls className={styles.postImage}>
+                              <source src={post.video} type="video/mp4" />
+                              Your browser does not support the video tag.
+                            </video>
+                          )}
+                          <div className={styles.postActions}>
+                            <button onClick={() => handleLike(post.id)}>
+                              <FaThumbsUp
+                                className={styles.actionButton}
+                                color={
+                                  localStorage.getItem("likes") &&
+                                  JSON.parse(localStorage.getItem("likes"))[
+                                    post.id
+                                  ]
+                                    ? "blue"
+                                    : "gray"
+                                }
+                              />{" "}
+                              {likes[post.id] || post.likes} Likes
+                            </button>
+
+                            <button onClick={() => handleCommentClick(post)}>
+                              <FaComment className={styles.actionButton} />{" "}
+                              {getCommentCount(post)} Comments
+                            </button>
+
+                            <button>
+                              <FaShare className={styles.actionButton} /> Share
+                            </button>
                           </div>
                         </div>
-                      </div>
-                      <div className={styles.postContent}>{post.content}</div>
-                      {post.image && (
-                        <img
-                          src={post.image}
-                          alt="Post"
-                          className={styles.postImage}
-                        />
-                      )}
-                      {post.video && (
-                        <video controls className={styles.postImage}>
-                          <source src={post.video} type="video/mp4" />
-                          Your browser does not support the video tag.
-                        </video>
-                      )}
-                      <div className={styles.postActions}>
-                        <button onClick={() => handleLike(post.id)}>
-                          <FaThumbsUp
-                            className={styles.actionButton}
-                            color={
-                              localStorage.getItem("likes") &&
-                              JSON.parse(localStorage.getItem("likes"))[post.id]
-                                ? "blue"
-                                : "gray"
-                            }
-                          />{" "}
-                          {likes[post.id] || post.likes} Likes
-                        </button>
-
-                        <button onClick={() => handleCommentClick(post)}>
-                          <FaComment className={styles.actionButton} />{" "}
-                          {getCommentCount(post)} Comments
-                        </button>
-
-                        <button>
-                          <FaShare className={styles.actionButton} /> Share
-                        </button>
-                      </div>
-                    </div>
-                  );
-                })}
+                      );
+                    })
+                )}
               </div>
 
               {/* Right Section - People You May Know */}
@@ -279,66 +301,76 @@ const Home = () => {
           </div>
 
           {/* Comment Modal */}
-          <Modal show={showModal} onHide={() => setShowModal(false)} className={styles.modalDialog}>
-  <Modal.Header closeButton className={styles.modalHeader}>
-    <Modal.Title>Comments</Modal.Title>
-  </Modal.Header>
-  <Modal.Body className={styles.modalBody}>
-  <div className={styles.commentContainer}>
-    {currentComments.length > 0 ? (
-      currentComments.map((comment, index) => {
-        const user =
-          comment.userId === "user-you"
-            ? {
-                name: "You",
-                avatar:
-                  "https://www.cgg.gov.in/wp-content/uploads/2017/10/dummy-profile-pic-male1.jpg",
-              }
-            : getUser(comment.userId) || {
-                name: "Unknown User",
-                avatar: "",
-              };
-              
-        return (
-          
-          <div key={index} className={styles.commentItem}>
-            <img
-              src={user.avatar}
-              alt={user.name}
-              className={styles.commentAvatar}
-            />
-            <div>
-              <strong className={styles.commentUser}>{user.name}</strong>
-              <span className={styles.commentDate}>
-                {" "}{new Date(comment.createdAt).toLocaleDateString()}
-              </span>
-              <p className={styles.commentText}>{comment.content}</p>
-            </div>
-          </div>
-          
-        );
-      })
-    ) : (
-      <p className="text-center">No comments yet. Be the first to comment!</p>
-    )}
-    </div>
+          <Modal
+            show={showModal}
+            onHide={() => setShowModal(false)}
+            className={styles.modalDialog}
+          >
+            <Modal.Header closeButton className={styles.modalHeader}>
+              <Modal.Title>Comments</Modal.Title>
+            </Modal.Header>
+            <Modal.Body className={styles.modalBody}>
+              <div className={styles.commentContainer}>
+                {currentComments.length > 0 ? (
+                  currentComments.map((comment, index) => {
+                    const user =
+                      comment.userId === "user-you"
+                        ? {
+                            name: "You",
+                            avatar:
+                              "https://www.cgg.gov.in/wp-content/uploads/2017/10/dummy-profile-pic-male1.jpg",
+                          }
+                        : getUser(comment.userId) || {
+                            name: "Unknown User",
+                            avatar: "",
+                          };
 
-    <textarea
-      className={styles.commentInput}
-      placeholder="Add a comment..."
-      value={commentText}
-      onChange={(e) => setCommentText(e.target.value)}
-    ></textarea>
-  </Modal.Body>
-  <Modal.Footer className={styles.modalFooter}>
-    
-    <Button className={styles.postbtn} variant="primary" onClick={handleAddComment}>
-      Post Comment
-    </Button>
-  </Modal.Footer>
-</Modal>
+                    return (
+                      <div key={index} className={styles.commentItem}>
+                        <img
+                          src={user.avatar}
+                          alt={user.name}
+                          className={styles.commentAvatar}
+                        />
+                        <div>
+                          <strong className={styles.commentUser}>
+                            {user.name}
+                          </strong>
+                          <span className={styles.commentDate}>
+                            {" "}
+                            {new Date(comment.createdAt).toLocaleDateString()}
+                          </span>
+                          <p className={styles.commentText}>
+                            {comment.content}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })
+                ) : (
+                  <p className="text-center">
+                    No comments yet. Be the first to comment!
+                  </p>
+                )}
+              </div>
 
-  
+              <textarea
+                className={styles.commentInput}
+                placeholder="Add a comment..."
+                value={commentText}
+                onChange={(e) => setCommentText(e.target.value)}
+              ></textarea>
+            </Modal.Body>
+            <Modal.Footer className={styles.modalFooter}>
+              <Button
+                className={styles.postbtn}
+                variant="primary"
+                onClick={handleAddComment}
+              >
+                Post Comment
+              </Button>
+            </Modal.Footer>
+          </Modal>
         </div>
       )}
     </>

@@ -1,38 +1,66 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { FaHome, FaUserFriends, FaBriefcase, FaBell, FaSearch,FaUser, FaChevronDown } from "react-icons/fa";
+import React, { useState, useEffect, useRef } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { FaHome, FaUserFriends, FaBriefcase, FaSearch, FaUser } from "react-icons/fa";
 import { Navbar, Nav, Container, Form, FormControl } from "react-bootstrap";
-import styles from "../styles/Navbar.module.css"; 
+import styles from "../styles/Navbar.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { setSearchTerm } from "../redux/searchSlice";
 
 const Navigationbar = () => {
-  const navigate = useNavigate(); // To navigate dynamically
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const searchTerm = useSelector((state) => state.search.searchTerm);
+  const location = useLocation();
+  const [showSearch, setShowSearch] = useState(false);
+  const searchRef = useRef(null);
   const username = "Ravindra";
-  
+
+  const handleSearch = (e) => {
+    dispatch(setSearchTerm(e.target.value));
+  };
+
+  useEffect(() => {
+    dispatch(setSearchTerm(""));
+  }, [location.pathname, dispatch]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (searchRef.current && !searchRef.current.contains(event.target)) {
+        setShowSearch(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <Navbar bg="white" expand="lg" className={styles.navbar}>
-      <Container fluid className={`d-flex justify-content-between align-items-center ${styles.topcontainer}`}>
-        
+      <Container fluid className={styles.topcontainer}>
         <div className="d-flex align-items-center">
           <Navbar.Brand as={Link} to="/home" className={styles.logo}>
-            <img
-              src="/linkedinLogo.png"
-              alt="LinkedIn"
-              height="35"
-            />
+            <img src="/linkedinLogo.png" alt="LinkedIn" height="35" />
           </Navbar.Brand>
 
-          {/* Search Bar for Large Screens */}
-          <Form className={`d-none d-md-flex ${styles.searchContainer}`}>
-            <FaSearch className={styles.searchIcon} />
-            <FormControl type="search" placeholder="Search" className={styles.searchBar} readOnly />
-          </Form>
-
-          {/* Search Icon for Small Screens */}
-          <FaSearch className={`d-flex d-md-none ${styles.navIconsearch}`} />
+          <div className={styles.searchWrapper} ref={searchRef}>
+            <FaSearch className={styles.searchIcon} onClick={() => setShowSearch(!showSearch)} />
+            {showSearch && (
+              <Form className={styles.searchContainer}>
+                <FormControl
+                  type="search"
+                  placeholder="Search"
+                  className={styles.searchBar}
+                  value={searchTerm}
+                  onChange={handleSearch}
+                  autoFocus
+                />
+              </Form>
+            )}
+          </div>
         </div>
 
-        
-        <Nav className="d-flex flex-row  align-items-center">
+        <Nav className={`d-flex flex-row align-items-center ${showSearch ? styles.hideIcons : ""}`}>
           <Nav.Link as={Link} to="/home" className={styles.navItem}>
             <FaHome className={styles.navIcon} />
             <span>Home</span>
@@ -45,9 +73,6 @@ const Navigationbar = () => {
             <FaBriefcase className={styles.navIcon} />
             <span>Jobs</span>
           </Nav.Link>
-          
-         
-        
           <Nav.Link onClick={() => navigate(`/profile/${username}`)} className={styles.navItem}>
             <FaUser className={styles.navIcon} />
             <span>Me</span>

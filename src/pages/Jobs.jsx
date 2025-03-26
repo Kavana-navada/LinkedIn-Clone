@@ -18,17 +18,19 @@ import {
 } from "react-icons/fa";
 import Navigationbar from "../components/Navigationbar";
 import styles from "../styles/Jobs.module.css";
+import { useSelector } from "react-redux";
 
 const Jobs = () => {
   const [jobs, setJobs] = useState([]);
   const [filteredJobs, setFilteredJobs] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
+  
   const [savedJobs, setSavedJobs] = useState(
     new Set(JSON.parse(localStorage.getItem("savedJobs")) || [])
   );
   const [loading, setLoading] = useState(true);
   const [selectedJob, setSelectedJob] = useState(null);
   const [showSavedOnly, setShowSavedOnly] = useState(false);
+  const searchTerm = useSelector((state) => state.search.searchTerm);
 
   useEffect(() => {
     setTimeout(() => {
@@ -57,7 +59,6 @@ const Jobs = () => {
     setFilteredJobs(updatedJobs);
   }, [searchTerm, jobs, showSavedOnly, savedJobs]);
 
-  const handleSearch = (e) => setSearchTerm(e.target.value.toLowerCase());
 
   const toggleSaveJob = (jobId) => {
     setSavedJobs((prev) => {
@@ -74,34 +75,7 @@ const Jobs = () => {
       <Navigationbar />
       <div className={styles.container}>
         <div className="container mt-4">
-          <div className={styles.jobsearch}>
-            <p>Find jobs</p>
-            <Form
-              className={`mb-3 d-flex justify-content-between align-items-center ${styles.jobTop} `}
-            >
-              <Form.Group controlId="search" className="flex-grow-1 me-3">
-                <InputGroup>
-                  <InputGroup.Text>
-                    <FaSearch />
-                  </InputGroup.Text>
-                  <Form.Control
-                    type="text"
-                    placeholder="Search by title, company, or location"
-                    value={searchTerm}
-                    onChange={handleSearch}
-                    className={styles.searchInput}
-                  />
-                </InputGroup>
-              </Form.Group>
-              <Form.Check
-                type="checkbox"
-                label="Show saved jobs only"
-                checked={showSavedOnly}
-                onChange={() => setShowSavedOnly(!showSavedOnly)}
-                className={styles.searchInput}
-              />
-            </Form>
-          </div>
+          
 
           {loading ? (
             <div className="text-center">
@@ -110,8 +84,16 @@ const Jobs = () => {
             </div>
           ) : (
             <div className={styles.jobinfo}>
+              <div className={styles.jobTop} >
               <h5 >Top job picks for you </h5>
-
+              <Form.Check
+                type="checkbox"
+                label="Show saved jobs only"
+                checked={showSavedOnly}
+                onChange={() => setShowSavedOnly(!showSavedOnly)}
+                className={styles.searchInput}
+              />
+              </div>
               <span>
                 Based on your profile, preferences, and activity like applies,
                 searches, and saves.

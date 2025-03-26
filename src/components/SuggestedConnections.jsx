@@ -2,11 +2,13 @@ import React, { useMemo } from "react";
 import { FaUserPlus } from "react-icons/fa";
 import styles from "../styles/Home.module.css";
 import usersData from "../data/users.json";
+import { useSelector } from "react-redux"; 
 
 const SuggestedConnections = ({ connections = {}, handleConnect, currentUsername }) => {
   const isConnectionsObject =
     typeof connections === "object" && !Array.isArray(connections);
 
+  const searchTerm = useSelector((state) => state.search.searchTerm);  
   const suggestedUsers = useMemo(() => {
     if (!connections) return usersData.slice(0, 3); 
 
@@ -16,15 +18,20 @@ const SuggestedConnections = ({ connections = {}, handleConnect, currentUsername
           ? !connections[user.id]
           : !connections.some((conn) => conn.id === user.id)
       )
-      .filter((user) => !currentUsername || user.name !== currentUsername) // ✅ Exclude only if username exists
+      .filter((user) => !currentUsername || user.name !== currentUsername) 
+      .filter((user) => 
+        searchTerm === "" || 
+        user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||  
+        user.headline.toLowerCase().includes(searchTerm.toLowerCase()) 
+      )
       .slice(0, 3);
-  }, [connections, currentUsername]);
+  }, [connections, currentUsername,searchTerm]);
 
   return (
     <div className={styles.sidebar}>
       <h5 className="text-center mb-3">People You May Know</h5>
       {suggestedUsers.length === 0 ? (
-        <p className="text-center">No new connections available</p>
+        <p className="text-center"> {searchTerm ? "No connections match your search" : "No new connections available"}</p>
       ) : (
         suggestedUsers.map((user) => (
           <div key={user.id} className={styles.userCard}>
@@ -42,12 +49,7 @@ const SuggestedConnections = ({ connections = {}, handleConnect, currentUsername
           </div>
         ))
       )}
-      <button
-        className={styles.viewMoreButton}
-        onClick={() => (window.location.href = "/connections")}
-      >
-        View More Connections
-      </button>
+      
     </div>
   );
 };
