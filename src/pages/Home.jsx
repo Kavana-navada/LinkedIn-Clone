@@ -43,7 +43,6 @@ const Home = () => {
       const storedLikes = JSON.parse(localStorage.getItem("likes")) || {};
       let updatedLikes = {};
 
-      // Initialize likes with stored values or fallback to default post likes
       postsData.forEach((post) => {
         updatedLikes[post.id] = storedLikes[post.id] || post.likes;
       });
@@ -59,7 +58,7 @@ const Home = () => {
     let updatedLikes = { ...likes };
 
     if (storedLikes[postId]) {
-      // Unlike: Decrease count and remove from localStorage
+      
       updatedLikes[postId] = Math.max(
         (updatedLikes[postId] ||
           posts.find((p) => p.id === postId)?.likes ||
@@ -68,12 +67,12 @@ const Home = () => {
       );
       delete storedLikes[postId];
     } else {
-      // Like: Increase count and store in localStorage
+     
       updatedLikes[postId] =
         (updatedLikes[postId] ||
           posts.find((p) => p.id === postId)?.likes ||
           0) + 1;
-      storedLikes[postId] = updatedLikes[postId]; // Store actual count
+      storedLikes[postId] = updatedLikes[postId]; 
     }
 
     setLikes(updatedLikes);
@@ -95,11 +94,11 @@ const Home = () => {
         storedComments = {};
       }
 
-      // Get current comments from localStorage & existing post data
+      
       const existingPostComments = selectedPost.comments || [];
       const savedComments = storedComments[selectedPost.id] || [];
 
-      // 🔹 Prevent duplicates by checking comment IDs
+     
       const allComments = [
         ...existingPostComments,
         ...savedComments,
@@ -120,12 +119,12 @@ const Home = () => {
       setPosts((prevPosts) =>
         prevPosts.map((post) =>
           post.id === selectedPost.id
-            ? { ...post, comments: uniqueComments } // ✅ Ensure post.comments updates instantly
+            ? { ...post, comments: uniqueComments } 
             : post
         )
       );
 
-      setCommentText(""); // Clear input field
+      setCommentText(""); 
     }
   };
   const handleCommentClick = (post) => {
