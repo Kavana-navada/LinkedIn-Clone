@@ -5,7 +5,7 @@
   justify-content: center;
  padding-top:80px;
   background-color:#f7faf9;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .row {
@@ -322,6 +322,10 @@
     font-size: 12px;
     padding: 5px 5px;
   }
-
+}
+@media (max-width:376px) {
+  .userCard{
+    flex-direction: column;
+  }
   
 }
