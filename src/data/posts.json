@@ -8,7 +8,7 @@
       "comments": [
         {
           "id": "comment1",
-          "userId": "user3",
+          "userId": "user4",
           "content": "This looks amazing! Can't wait to try it out.",
           "createdAt": "2025-03-22T14:30:00Z"
         }
@@ -54,6 +54,28 @@
         }
       ],
       "createdAt": "2025-03-23T11:20:00Z"
+    },
+    {
+      "id": "post5",
+      "userId": "user1",
+      "content": "Apple is taking innovation to the next level with its brand-new state-of-the-art building! 🌍✨ #Apple #Innovation #Sustainability #FutureOfWork ",
+      "image": "https://www.dice.com/binaries/medium/content/gallery/dice/insights/2020/08/shutterstock_115231372.jpg",
+      "likes": 94,
+      "comments": [
+        {
+          "id": "comment4",
+          "userId": "user2",
+          "content": "Beautiful Architecture",
+          "createdAt": "2025-01-02T14:30:00Z"
+        },
+        {
+          "id": "comment5",
+          "userId": "user4",
+          "content": "Looks Great",
+          "createdAt": "2025-01-04T14:30:00Z"
+        }
+      ],
+      "createdAt": "2025-01-02T10:30:00Z"
     }
   ]
   

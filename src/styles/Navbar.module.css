@@ -30,6 +30,11 @@
   border: none;
   background: transparent;
   outline: none;
+  
+}
+.searchBar:focus{
+  box-shadow: none;
+  background-color: transparent;
 }
 
 
@@ -70,6 +75,7 @@
   color: gray;
   margin-right: 5px;
 }
+
 
 /* Notification Badge */
 /* .notificationBadge {

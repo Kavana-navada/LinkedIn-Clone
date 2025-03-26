@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Navigationbar from "../components/Navigationbar";
+import CreatePost from "../components/CreatePosts";
 import SuggestedConnections from "../components/SuggestedConnections";
 import { Modal, Button, Spinner } from "react-bootstrap";
 import styles from "../styles/Home.module.css";
@@ -48,7 +49,7 @@ const Home = () => {
       setLikes(updatedLikes);
       setPosts(postsData);
       setLoading(false);
-    }, 500);
+    }, 300);
   }, []);
 
   // const handleLike = (postId) => {
@@ -204,7 +205,9 @@ const Home = () => {
           <div className={styles.container}>
             <div className={`row ${styles.row}`}>
               {/* Left Section - Posts */}
+              
               <div className="col-md-8">
+              <CreatePost profileUrl="https://www.cgg.gov.in/wp-content/uploads/2017/10/dummy-profile-pic-male1.jpg" />
                 {posts.map((post) => {
                   const user = getUser(post.userId);
                   return (

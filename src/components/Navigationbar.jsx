@@ -24,7 +24,7 @@ const Navigationbar = () => {
           {/* Search Bar for Large Screens */}
           <Form className={`d-none d-md-flex ${styles.searchContainer}`}>
             <FaSearch className={styles.searchIcon} />
-            <FormControl type="search" placeholder="Search" className={styles.searchBar} />
+            <FormControl type="search" placeholder="Search" className={styles.searchBar} readOnly />
           </Form>
 
           {/* Search Icon for Small Screens */}

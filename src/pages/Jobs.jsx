@@ -35,7 +35,7 @@ const Jobs = () => {
       setJobs(jobData);
       setFilteredJobs(jobData);
       setLoading(false);
-    }, 500);
+    }, 300);
   }, []);
 
   useEffect(() => {

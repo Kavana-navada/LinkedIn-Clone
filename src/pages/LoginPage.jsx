@@ -1,7 +1,7 @@
 // src/pages/LoginPage.jsx
 import React,{useState} from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/LoginPage.css';
+import styles from '../styles/LoginPage.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const LoginPage = () => {
@@ -40,7 +40,7 @@ const LoginPage = () => {
   
 
   return (
-    <div className="d-flex flex-column align-items-center mt-5 bg-light custom-bg ">
+    <div className={`d-flex flex-column align-items-center mt-5 bg-light ${styles.custombg}`} >
 
       <img
         src="/linkedin.png"
@@ -48,43 +48,43 @@ const LoginPage = () => {
         className="mb-3 "
         style={{ width: "150px" }}
       />
-      <div className="card p-4 shadow-sm custom-loginform-container " style={{ width: "350px" }}>
+      <div className={`card p-4 shadow-sm  ${styles.customloginformcontainer}`}  style={{ width: "350px" }}>
         <h3 className="mb-1">Sign in</h3>
         <form onSubmit={handleSubmit}>
           <div className="mb-2">
             <input
               type="email"
-              className="form-control custom-input"
+              className={`form-control  ${styles.custominput}`}
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            {errors.email && <small className="text-danger custom-error">{errors.email}</small>}
+            {errors.email && <small className={`text-danger  ${styles.customerror}`}>{errors.email}</small>}
           </div>
           <div className="mb-2 position-relative">
             <input
               type={showPassword ? "text" : "password"}
-              className="form-control custom-input"
+              className={`form-control  ${styles.custominput}`}
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
             <span
-              className="position-absolute end-0 top-50 translate-middle-y me-3 text-primary custom-show"
+              className={`position-absolute end-0 top-50 translate-middle-y me-3 text-primary  ${styles.customshow}`}
               style={{ cursor: "pointer" }}
               onClick={() => setShowPassword(!showPassword)}
             >
               {showPassword ? "Hide" : "Show"}
             </span>
-            {errors.password && <small className="text-danger custom-error">{errors.password}</small>}
+            {errors.password && <small className={`text-danger  ${styles.customerror}`}>{errors.password}</small>}
           </div>
           <div className="mb-3 form-check mt-4">
-            <input type="checkbox" className="form-check-input custom-checkbox" id="keepLoggedIn" />
+            <input type="checkbox" className={`form-check-input  ${styles.customcheckbox}`} id="keepLoggedIn" />
             <label className="form-check-label" htmlFor="keepLoggedIn">
               Keep me logged in
             </label>
           </div>
-          <button type="submit" className="btn btn-primary w-100 custom-signin">Sign in</button>
+          <button type="submit" className={`btn btn-primary w-100  ${styles.customsignin}`}>Sign in</button>
         </form>
         
         </div>

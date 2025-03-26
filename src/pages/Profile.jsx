@@ -10,10 +10,12 @@ import {
 import users from "../data/users.json";
 import posts from "../data/posts.json";
 import SuggestedConnections from "../components/SuggestedConnections";
+import CreatePost from "../components/CreatePosts";
 import { Modal, Button, Container, Row, Col, Card,Spinner } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "../styles/Profile.module.css";
 import Navigationbar from "../components/Navigationbar";
+import NotFound from "../pages/NotFoundPage";
 
 const Profile = () => {
   const { username } = useParams();
@@ -37,15 +39,17 @@ const Profile = () => {
   const user = users.find((u) => u.name === username);
 
   useEffect(() => {
+    setLoading(true);
     setTimeout(() => {
     if (user) {
       setBio(localStorage.getItem(`bio-${username}`) || user.bio);
       setBioHeadline(localStorage.getItem(`bioheadline-${username}`) || user.bioheadline);
       setJobTitle(localStorage.getItem(`job-${username}`) || user.headline);
       setLocation(localStorage.getItem(`location-${username}`) || user.location);
-      setLoading(false);
+      
     }
-  }, 500);
+    setLoading(false);
+  }, 300);
   }, [user, username]);
 
   const handleSave = () => {
@@ -65,11 +69,11 @@ const Profile = () => {
   };
 
   const userPosts = useMemo(
-    () => posts.filter((post) => post.userId === user.id),
+    () => (user?posts.filter((post) => post.userId === user.id): []),
     [user]
   );
 
-  if (!user) return <h2 className="text-center mt-5">User not found</h2>;
+  if (!user) return <div><NotFound/></div>;
 
   return (
     <>
@@ -178,6 +182,7 @@ const Profile = () => {
               {/* Activity Section */}
               <Card className={`p-3 mb-3  ${styles.card}`}>
                 <Card.Title className="mb-3">Activity</Card.Title>
+                <CreatePost profileUrl={user.avatar} />
                 <Row>
                   {userPosts.length > 0 ? (
                     userPosts.map((post) => (
