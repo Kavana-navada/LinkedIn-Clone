@@ -40,7 +40,7 @@ const LoginPage = () => {
   
 
   return (
-    <div className={`d-flex flex-column align-items-center mt-5 bg-light ${styles.custombg}`} >
+    <div className={`d-flex flex-column align-items-center mt-5 bg-light ${styles.custombg}`} centered >
 
       <img
         src="/linkedin.png"
