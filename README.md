@@ -86,25 +86,16 @@ Here’s what you can expect from the app:
 
 ### 💼 Job Listings  
 <img src="public/screenshots/Job.png" alt="Job Listings" width="600"/>  
+
 ### 🔗 Connections 
 <img src="public/screenshots/Connection.png" alt="Connections" width="600"/>  
 
+### 📱 Mobile View 
 <p align="center">
-  
   <img src="public/screenshots/MblHome.jpg" alt="Home Page Mobile" width="250"/>
   <img src="public/screenshots/MblProfile.jpg" alt="Profile Page Mobile" width="250"/>  
- 
   <img src="public/screenshots/MblConnection.jpg" alt="Connections Mobile" width="250"/>  
 </p> 
-
-
-
-
-
-
- 
-
-
 
 ---
 ## How to build your own..?
