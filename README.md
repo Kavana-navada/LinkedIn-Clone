@@ -1,6 +1,7 @@
 # LinkedIn Clone
 ## Project Overview
 Welcome to LinkedIn Clone, a frontend-only professional networking application built using React, Bootstrap, JavaScript, CSS, Redux and LocalStorage.  
+It is deployed at [kavana-navada-linked-in-clone.netlify.app](kavana-navada-linked-in-clone.netlify.app)
 
 This project is designed to replicate LinkedIn’s core features, such as:  
 - Viewing the posts.
@@ -75,10 +76,10 @@ Here’s what you can expect from the app:
 ---
 ## 📷 Screenshots  
 
-### 🔑 Login Page  
+### 🔑 Login   
 <img src="public/screenshots/login.png" alt="Login Page" width="600"/>
 
-### 🏠 Home Page
+### 🏠 Home 
 <img src="public/screenshots/Home.png" alt="Home Page" width="600"/>
 
 ### 👤 User Profile  
@@ -91,7 +92,7 @@ Here’s what you can expect from the app:
 <img src="public/screenshots/Connection.png" alt="Connections" width="600"/>  
 
 ### 📱 Mobile View 
-<p align="center">
+<p >
   <img src="public/screenshots/MblHome.jpg" alt="Home Page Mobile" width="250"/>
   <img src="public/screenshots/MblProfile.jpg" alt="Profile Page Mobile" width="250"/>  
   <img src="public/screenshots/MblConnection.jpg" alt="Connections Mobile" width="250"/>  
@@ -112,7 +113,7 @@ Before running the project, make sure you have the following installed:
 
 1. **Clone the repository**  
    ```sh
-   git clone https://github.com/your-username/linkedin-clone.git
+   git clone https://github.com/Kavana-navada/LinkedIn-Clone.git
    cd linkedin-clone
 
 2. **Install dependencies**
