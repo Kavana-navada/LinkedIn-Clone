@@ -1,6 +1,8 @@
 import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Spinner } from "react-bootstrap";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SplashScreen = lazy(() => import("./pages/SplashScreen"));
 const LoginPage = lazy(() => import("./pages/LoginPage"));
@@ -29,7 +31,19 @@ function App() {
           <Route path="/jobs" element={<Jobs />} />
           <Route path="/profile/:username" element={<Profile />} />
           <Route path="*" element={<NotFoundPage />} />
-        </Routes>
+          
+        </Routes><ToastContainer
+  position="top-right"
+  autoClose={3000}
+  hideProgressBar={false}
+  newestOnTop={true}
+  closeOnClick
+  rtl={false}
+  pauseOnFocusLoss
+  draggable
+  pauseOnHover
+  theme="colored"
+/><ToastContainer position="top-center" autoClose={2000} />
       </Suspense>
     </Router>
   );

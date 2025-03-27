@@ -19,6 +19,7 @@ import {
 import Navigationbar from "../components/Navigationbar";
 import styles from "../styles/Jobs.module.css";
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 const Jobs = () => {
   const [jobs, setJobs] = useState([]);
@@ -210,16 +211,17 @@ const Jobs = () => {
                   {savedJobs.has(selectedJob.id) ? "Saved" : "Save Job"}
                 </Button>
                 <Button
-                  className={styles.applybtn}
-                  variant="primary"
-                  onClick={() =>
-                    alert(
-                      `Your application for ${selectedJob.title} at ${selectedJob.company} has been submitted`
-                    )
-                  }
-                >
-                  Apply Now
-                </Button>
+  className={styles.applybtn}
+  variant="primary"
+  onClick={() =>
+    toast.success(
+      `Your application for ${selectedJob.title} at ${selectedJob.company} has been submitted`
+    )
+  }
+>
+  Apply Now
+</Button>
+               
               </Modal.Footer>
             </Modal>
           )}

@@ -268,6 +268,7 @@ const Profile = () => {
               className={styles.modal}
               show={showModal}
               onHide={() => setShowModal(false)}
+              centered
             >
               <Modal.Header closeButton>
                 <Modal.Title>Edit Profile</Modal.Title>
