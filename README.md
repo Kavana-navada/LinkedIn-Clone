@@ -6,7 +6,7 @@
 
 ## Project Overview
 Welcome to LinkedIn Clone, a frontend-only professional networking application built using React, Bootstrap, JavaScript, CSS, Redux and LocalStorage.  
-It is deployed at [kavana-navada-linked-in-clone.netlify.app](kavana-navada-linked-in-clone.netlify.app)
+It is deployed at [kavana-navada-linked-in-clone.netlify.app](https://kavana-navada-linked-in-clone.netlify.app)
 
 This project is designed to replicate LinkedIn’s core features, such as:  
 - Viewing the posts.
