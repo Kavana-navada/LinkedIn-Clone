@@ -22,3 +22,17 @@ Our goal is simple: **to build a LinkedIn-like UI that feels real, even without 
 ✔️ **Ensure seamless navigation** with React Router.  
 ✔️ **Make it fully responsive** using Bootstrap.  
 ✔️ **Use JSON files** as a mock database for posts, jobs, and users. 
+
+## Technologies Used  
+We’re using a **modern frontend tech stack** to make this project as efficient and scalable as possible:  
+
+| Technology | Purpose |
+|------------|---------|
+| **React.js** | UI development & component-based architecture |
+| **React Router** | Page navigation without reloading |
+| **Bootstrap 5** | Styling & responsiveness |
+| **JavaScript (ES6+)** | Dynamic content handling |
+| **LocalStorage** | Storing user interactions (likes, saved jobs, connections) |
+| **JSON** | Mock data for posts, jobs, and users |
+
+---
