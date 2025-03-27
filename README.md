@@ -103,7 +103,7 @@ Here’s what you can expect from the app:
 <p >
   <img src="public/screenshots/MblHome.jpg" alt="Home Page Mobile" width="240"/>
   <img src="public/screenshots/MblProfile.jpg" alt="Profile Page Mobile" width="240"/> 
-  <img src="public/screenshots/MblJob.jpg" alt="Job Page Mobile" width="240"/>
+  <img src="public/screenshots/MblJob.jpg" alt="Job Page Mobile" width="240"/> 
   <img src="public/screenshots/MblConnection.jpg" alt="Connections Mobile" width="240"/>  
 </p> 
 
