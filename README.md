@@ -80,16 +80,180 @@ Follow these steps to set up the project on your local machine.
 Before running the project, make sure you have the following installed:  
 - **Node.js (LTS version recommended)** – [Download here](https://nodejs.org/)  
 - **npm or yarn** (comes with Node.js)  
-- **VS Code** – Recommended for development ([Download](https://code.visualstudio.com/))  
+- **VS Code** – Recommended for development [Download here](https://code.visualstudio.com/)  
 
 ### 📥 Installation & Setup  
 
 1. **Clone the repository**  
    ```sh
    git clone https://github.com/your-username/linkedin-clone.git
-   cd linkedin-clone```
+   cd linkedin-clone
 
+2. **Install dependencies**
+   ```sh
+   npm install
+   ```
+   or if using yarn:
+   ```sh
+   yarn install
+   ```
+3. **Run the development server**
+   ``` sh
+   npm run dev
+   ```
+   The app will start at http://localhost:5317/ (default Vite server).
 
+## 🌍 Deploying to Netlify  
 
+Want to make your LinkedIn Clone live? Follow these steps to **deploy it on Netlify**:  
 
+### **1. Build the Project**  
+Run the following command to generate optimized production files:  
+```sh
+npm run build
+```
+This will create a dist/ folder with production-ready assets.
+
+### **2. Deploy to Netlify**
+  - Go to [Netlify](https://www.netlify.com/) and log in or sign up.
+  - Click "New site from Git" ( or you can deploy manually by uploding dist folder).
+  - Connect your GitHub repository.
+  - Select the branch (usually main).
+  - Set the build command as:
+      ```sh
+      npm run build
+      ```
+   - Set the publish directory as:
+      ```ngnix
+         dist
+      ```
+   - Click "Deploy Site".
+
+### **3. Live Preview**
+Once the deployment is complete, Netlify will provide a live URL for your project.
+You can also set a custom domain in the Netlify settings.
+
+Congratulations! Your LinkedIn Clone is now live on the internet.
+
+## Project Structure
+```linkedin-clone/
+linkedin-clone/
+│── dist/
+│── node_modules/
+│── public/                # Static assets
+│   ├── _redirects
+│   ├── linkedin.png
+│   ├── linkedinL.png
+│   ├── linkedinLogo.png
+│   ├── notfound.png
+│── src/                   # Main source code
+│   ├── assets/            # Images, icons, and other assets
+│   ├── components/        # Reusable UI components
+│   │   ├── CreatePosts.jsx  
+│   │   ├── Navigationbar.jsx  
+│   │   ├── SuggestedConnections.jsx  
+│   ├── data/              # Mock data in JSON format
+│   │   ├── jobs.json  
+│   │   ├── posts.json  
+│   │   ├── users.json  
+│   ├── pages/             # Page-level components
+│   │   ├── Connections.jsx  
+│   │   ├── Home.jsx  
+│   │   ├── Jobs.jsx  
+│   │   ├── LoginPage.jsx  
+│   │   ├── NotFoundPage.jsx  
+│   │   ├── Profile.jsx  
+│   │   ├── SplashScreen.jsx  
+│   ├── redux/             # Redux store & slices (State Management)
+│   │   ├── searchSlice.js
+│   │   ├── store.js
+│   ├── styles/            # Modular CSS files for components
+│   │   ├── Connections.module.css  
+│   │   ├── CreatePost.module.css  
+│   │   ├── Home.module.css  
+│   │   ├── Jobs.module.css  
+│   │   ├── LoginPage.module.css  
+│   │   ├── Navbar.module.css  
+│   │   ├── NotFoundPage.module.css  
+│   │   ├── Profile.module.css  
+│   ├── App.jsx            # Main application component  
+│   ├── main.jsx           # Renders React app  
+│── .gitignore             # Git ignore file  
+│── eslint.config.js       # ESLint configuration  
+│── index.html             # HTML template  
+│── package.json           # Project dependencies  
+│── package-lock.json      # Lock file for dependencies  
+│── README.md              # Project documentation  
+│── vite.config.js         # Vite configuration  
+      
+```
+## 📖Usage Guide  
+
+Now that you have the project set up, let’s walk through how to use the LinkedIn Clone.  
+
+### 🏠 **Navigating the App**  
+- **Login Page**: Enter any valid email and password (for UI purposes only).  
+- **Home Page**: View and interact with posts.  
+- **Jobs Page**: Explore job listings and save jobs.  
+- **Profile Page**: View and edit your profile details.  
+- **Connections Page**: Connect with suggested users.  
+
+### 💡 **Interacting with Features**  
+- Click **"Like"** on a post → Updates in real-time and saves to **LocalStorage**.  
+- Add a **comment** on a post → Persists even after page reload.  
+- Click **"Save Job"** → Job is stored in LocalStorage under **Saved Jobs**.  
+- Click **"Connect"** on a user → They appear under **My Connections**.  
+
+### 🛠 **Customization & Modifications**  
+- Modify the `src/data/` JSON files (`posts.json`, `jobs.json`, `users.json`) to change default content.  
+- Update the `styles/` folder to tweak the UI.  
+- Want to add backend support? Use **Firebase** or **Node.js** to extend the project.  
+
+### ❓ **Troubleshooting**  
+- If the app doesn’t load properly, check the **console logs** in DevTools.  
+- Run `npm install` again if you face dependency issues.  
+- Restart the development server using `npm run dev`.
+  
 ---
+## 🛠 Debugging Issues  
+If you run into problems, here are a few things to check:  
+
+### 🔹 App not starting?  
+```sh
+npm install
+npm run dev
+```
+  - Make sure Node.js and npm/yarn are installed.
+  - Check if dependencies are installed with `npm list` or reinstall with `npm install`.
+  - If using Vite, confirm it's running on the correct port (default: http://localhost:5173/).
+
+### 🔹 Styles not loading?
+  - Ensure Bootstrap is imported properly in index.js or App.js.
+  - Check file paths of external stylesheets.
+
+### 🔹 Page not found?
+   - Make sure React Router is correctly handling navigation.
+   - If using Netlify, create `_redirects` file with:
+   ```bash
+   /*  /index.html  200
+   ```
+
+🧪 Testing the Application
+Since this is a frontend-only app, testing is manual.
+
+🔹 What to test?
+✔️ UI responsiveness (mobile, tablet, desktop).
+✔️ LocalStorage functionality (likes, saved jobs, connections).
+✔️ Navigation using React Router.
+✔️ JSON data fetching (posts, jobs, profiles).
+
+🔹 How to test manually?
+Open Developer Tools (F12) in your browser.
+
+Go to the Console & Network tab to check for errors.
+
+Clear LocalStorage and reload to test data persistence.
+
+Test all buttons, modals, and navigation.
+
+🎯 Project
