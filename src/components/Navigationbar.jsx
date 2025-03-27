@@ -46,7 +46,7 @@ const Navigationbar = () => {
           <div className={styles.searchWrapper} ref={searchRef}>
             <FaSearch className={styles.searchIcon} onClick={() => setShowSearch(!showSearch)} />
             {showSearch && (
-              <Form className={styles.searchContainer}>
+              <Form className={styles.searchContainer}  onSubmit={(e) => e.preventDefault()}>
                 <FormControl
                   type="search"
                   placeholder="Search"

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
 import styles from "../styles/CreatePost.module.css";
+import { toast } from "react-toastify";
 import { FaImage, FaVideo, FaNewspaper,FaPaperclip } from "react-icons/fa";
 
 const CreatePost = ({profileUrl}) => {
@@ -13,9 +14,11 @@ const CreatePost = ({profileUrl}) => {
   };
 
   const handlePost = () => {
-    alert("Post has been published!");
+  
     setPostContent("");
     setFile(null);
+    toast.success( `Post has been published!`)
+                                  
     setShowModal(false);
   };
 

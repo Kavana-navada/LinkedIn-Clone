@@ -1,5 +1,12 @@
 /* Full-width Navbar */
-.navbar {
+.customToastBody {
+  margin-top: 60px !important;
+  padding: 10px 20px;
+  font-size: 14px;
+
+    }
+
+    .navbar {
   width: 100%;
   border-bottom: 1px solid #ddd;
   padding: 0 20px;
@@ -19,6 +26,7 @@
 .searchIcon {
   color: gray;
   margin-right: 5px;
+
 }
 .searchContainer {
   display: flex;
@@ -58,7 +66,10 @@
 .navIcon {
   font-size: 20px;
   margin-right: 5px; 
+
 }
+
+
 
 .navItem:hover {
   color: #0a66c2;

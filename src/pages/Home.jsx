@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import Navigationbar from "../components/Navigationbar";
 import CreatePost from "../components/CreatePosts";
 import SuggestedConnections from "../components/SuggestedConnections";
+import { toast } from "react-toastify";
 import { Modal, Button, Spinner } from "react-bootstrap";
 import styles from "../styles/Home.module.css";
 import postsData from "../data/posts.json";
@@ -278,7 +279,11 @@ const Home = () => {
                               {getCommentCount(post)} Comments
                             </button>
 
-                            <button>
+                            <button onClick={() =>
+                                toast.success(
+                                  `Shared!`
+                                )
+                              }> 
                               <FaShare className={styles.actionButton} /> Share
                             </button>
                           </div>

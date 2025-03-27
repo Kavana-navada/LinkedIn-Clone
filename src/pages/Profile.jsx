@@ -7,6 +7,7 @@ import {
   FaChartBar,
   FaSearch,
 } from "react-icons/fa";
+import { toast } from "react-toastify";
 import users from "../data/users.json";
 import posts from "../data/posts.json";
 import SuggestedConnections from "../components/SuggestedConnections";
@@ -68,6 +69,11 @@ const Profile = () => {
     localStorage.setItem(`bioheadline-${username}`, bioHeadline);
     localStorage.setItem(`location-${username}`, location);
     localStorage.setItem(`job-${username}`, jobTitle);
+    
+        toast.success(
+          `Profile Updated`
+        )
+      
     setShowModal(false);
   };
   const handleConnect = (userId) => {

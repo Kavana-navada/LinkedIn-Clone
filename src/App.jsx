@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Spinner } from "react-bootstrap";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import styles from "./styles/Navbar.module.css"
 const SplashScreen = lazy(() => import("./pages/SplashScreen"));
 const LoginPage = lazy(() => import("./pages/LoginPage"));
 const Home = lazy(() => import("./pages/Home"));
@@ -32,21 +32,24 @@ function App() {
           <Route path="/profile/:username" element={<Profile />} />
           <Route path="*" element={<NotFoundPage />} />
           
-        </Routes><ToastContainer
-  position="top-right"
-  autoClose={3000}
+        </Routes>
+        <ToastContainer
+  position="top-center"
+  autoClose={1500}
   hideProgressBar={false}
   newestOnTop={true}
   closeOnClick
   rtl={false}
   pauseOnFocusLoss
   draggable
-  pauseOnHover
   theme="colored"
-/><ToastContainer position="top-center" autoClose={2000} />
+  toastClassName={styles.customToastBody} 
+/>
+
+
       </Suspense>
     </Router>
   );
-}
+} 
 
 export default App;
