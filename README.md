@@ -6,7 +6,10 @@
 
 ## Project Overview
 Welcome to LinkedIn Clone, a frontend-only professional networking application built using React, Bootstrap, JavaScript, CSS, Redux and LocalStorage.  
-It is deployed at [kavana-navada-linked-in-clone.netlify.app](https://kavana-navada-linked-in-clone.netlify.app)
+
+The project is deployed on [kavana-navada-linked-in-clone.netlify.app](https://kavana-navada-linked-in-clone.netlify.app)
+
+The project repository is available on GitHub at [https://github.com/Kavana-navada/LinkedIn-Clone.git](https://github.com/Kavana-navada/LinkedIn-Clone.git)
 
 This project is designed to replicate LinkedIn’s core features, such as:  
 - Viewing the posts.
@@ -134,6 +137,31 @@ Before running the project, make sure you have the following installed:
    npm run dev
    ```
    The app will start at http://localhost:5317/ (default Vite server).
+
+## To Upload Files to a GitHub Repository
+  - Open Terminal/Command Prompt: Navigate to project directory.
+  - Initialize Git (if not already initialized):
+    ```sh
+    git init
+    ```
+- Add All Files to Git: 
+  ```sh
+  git add .
+  ```
+- Commit your changes: 
+  ```sh
+  git commit -m "Initial commit"
+  ```
+- Copy the Remote Repository URL: In the new repository page on GitHub, the HTTPS URL (e.g., https://github.com/Kavana-navada/LinkedIn-Clone.git](https://github.com/Kavana-navada/LinkedIn-Clone.git) is copied.
+- Add Remote Origin: 
+```sh
+git remote add origin https://github.com/Kavana-navada/LinkedIn-Clone.git
+```
+- Push Files to GitHub:
+```sh
+git push -u origin main
+```
+
 
 ## Project Structure
 ```linkedin-clone/
@@ -353,6 +381,17 @@ Here are some planned improvements for upcoming versions of the LinkedIn Clone:
 
 ### 🔹 Notification Page
 - Implementing notification page to get notified.
+
+---
+## Conclusion
+This LinkedIn Clone (Frontend-Only) project is built using React, Bootstrap, and Redux, focusing solely on the user interface without backend integration. It delivers a seamless experience for navigation, job searching, and connection management while utilizing local storage for data persistence
+
+## 📚 References  
+- [LinkedIn](https://www.linkedin.com/)  
+- [React Docs](https://react.dev/)  
+- [Redux Docs](https://redux.js.org/)  
+- [React Router](https://reactrouter.com/)  
+
 
 
 
