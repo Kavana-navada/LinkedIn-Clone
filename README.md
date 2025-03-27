@@ -48,13 +48,13 @@ Here’s what you can expect from the app:
 
 ### 🏠 **Home Page (Post Feed)**  
 - **Displays posts** dynamically from a `posts.json`.
-- **Suggests People You Know** dynamically from a `users.json`
+- **Suggests People You Know** (Reused Component).
 - Users can **like, comment, and share** posts.  
 - Liked posts and comments stay **saved in LocalStorage**.  
 
 ### 👤 **User Profile**  
 - Shows **profile picture, name, bio, and posts**.
-- Suggests People You Know (Reused Component)
+- Suggests People You Know (Reused Component).
 - Displays **Analytics** dynamically from a `jobs.json`
 - Users can **edit their bio & job information** (saved in LocalStorage).  
 
