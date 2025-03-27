@@ -1,4 +1,9 @@
-# LinkedIn Clone
+<h1>
+  <img src="public/linkedinLogo.png" alt="Login Page" width="25" height="25">
+  LinkedIn Clone
+</h1>
+
+
 ## Project Overview
 Welcome to LinkedIn Clone, a frontend-only professional networking application built using React, Bootstrap, JavaScript, CSS, Redux and LocalStorage.  
 It is deployed at [kavana-navada-linked-in-clone.netlify.app](kavana-navada-linked-in-clone.netlify.app)
