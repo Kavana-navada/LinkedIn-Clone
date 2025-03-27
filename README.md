@@ -72,6 +72,22 @@ Here’s what you can expect from the app:
 - Uses **Bootstrap Grid & CSS media queries**.  
 
 ---
+## How to build your own..?
+
+Follow these steps to set up the project on your local machine.
+
+### 📌 Prerequisites  
+Before running the project, make sure you have the following installed:  
+- **Node.js (LTS version recommended)** – [Download here](https://nodejs.org/)  
+- **npm or yarn** (comes with Node.js)  
+- **VS Code** – Recommended for development ([Download](https://code.visualstudio.com/))  
+
+### 📥 Installation & Setup  
+
+1. **Clone the repository**  
+   ```sh
+   git clone https://github.com/your-username/linkedin-clone.git
+   cd linkedin-clone```
 
 
 
