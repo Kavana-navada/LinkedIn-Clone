@@ -14,7 +14,7 @@ const LoginPage = () => {
         return(/^\S+@\S+\.\S+$/.test(email))
          
     };
-
+ 
     const validatePassword = (password) => {
         return password.trim() !== "";
     };
@@ -40,10 +40,10 @@ const LoginPage = () => {
   
 
   return (
-    <div className={`d-flex flex-column align-items-center mt-5 bg-light ${styles.custombg}`} centered >
+    <div className={`d-flex flex-column align-items-center vh-100 d-flex justify-content-center bg-light ${styles.custombg}`} centered >
 
       <img
-        src="/linkedin.png"
+        src="/linkedinL.png"
         alt="LinkedIn Logo"
         className="mb-3 "
         style={{ width: "150px" }}
