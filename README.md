@@ -1,4 +1,5 @@
 # LinkedIn Clone
+## Project Overview
 Welcome to LinkedIn Clone, a frontend-only professional networking application built using React, Bootstrap, JavaScript, CSS, Redux and LocalStorage.  
 
 This project is designed to replicate LinkedIn’s core features, such as:  
@@ -72,6 +73,21 @@ Here’s what you can expect from the app:
 - Uses **Bootstrap Grid & CSS media queries**.  
 
 ---
+## 📷 Screenshots  
+
+### 🔑 Login Page  
+![Login Page](public/screenshots/login.png)  
+
+### 🏠 Home Feed  
+![Home Feed](public/screenshots/home.png)  
+
+### 👤 User Profile  
+![Profile Page](public/screenshots/profile.png)  
+
+### 💼 Job Listings  
+![Job Listings](public/screenshots/jobs.png)  
+
+---
 ## How to build your own..?
 
 Follow these steps to set up the project on your local machine.
@@ -102,38 +118,6 @@ Before running the project, make sure you have the following installed:
    npm run dev
    ```
    The app will start at http://localhost:5317/ (default Vite server).
-
-## 🌍 Deploying to Netlify  
-
-Want to make your LinkedIn Clone live? Follow these steps to **deploy it on Netlify**:  
-
-### **1. Build the Project**  
-Run the following command to generate optimized production files:  
-```sh
-npm run build
-```
-This will create a dist/ folder with production-ready assets.
-
-### **2. Deploy to Netlify**
-  - Go to [Netlify](https://www.netlify.com/) and log in or sign up.
-  - Click "New site from Git" ( or you can deploy manually by uploding dist folder).
-  - Connect your GitHub repository.
-  - Select the branch (usually main).
-  - Set the build command as:
-      ```sh
-      npm run build
-      ```
-   - Set the publish directory as:
-      ```ngnix
-         dist
-      ```
-   - Click "Deploy Site".
-
-### **3. Live Preview**
-Once the deployment is complete, Netlify will provide a live URL for your project.
-You can also set a custom domain in the Netlify settings.
-
-Congratulations! Your LinkedIn Clone is now live on the internet.
 
 ## Project Structure
 ```linkedin-clone/
@@ -215,6 +199,106 @@ Now that you have the project set up, let’s walk through how to use the Linked
 - Restart the development server using `npm run dev`.
   
 ---
+## 🌍 Deploying to Netlify  
+
+Want to make your LinkedIn Clone live? Follow these steps to **deploy it on Netlify**:  
+
+### **1. Build the Project**  
+Run the following command to generate optimized production files:  
+```sh
+npm run build
+```
+This will create a dist/ folder with production-ready assets.
+
+### **2. Deploy to Netlify**
+  - Go to [Netlify](https://www.netlify.com/) and log in or sign up.
+  - Click "New site from Git" ( or you can deploy manually by uploding dist folder).
+  - Connect your GitHub repository.
+  - Select the branch (usually main).
+  - Set the build command as:
+      ```sh
+      npm run build
+      ```
+   - Set the publish directory as:
+      ```ngnix
+         dist
+      ```
+   - Click "Deploy Site".
+
+### **3. Live Preview**
+Once the deployment is complete, Netlify will provide a live URL for your project.
+You can also set a custom domain in the Netlify settings.
+
+Congratulations! Your LinkedIn Clone is now live on the internet.
+
+---
+## 🧪 Testing the Application
+Since this is a frontend-only app, testing is manual.
+
+### 🔹 What to test?
+   - UI responsiveness (mobile, tablet, desktop).
+   - LocalStorage functionality (likes, saved jobs, connections).
+   - Navigation using React Router.
+   - JSON data fetching (posts, jobs, profiles).
+
+### 🔹 How to test manually?
+   - Open Developer Tools (F12) in your browser.
+   - Go to the Console & Network tab to check for errors.
+   - Clear LocalStorage and reload to test data persistence.
+   - Test all buttons, modals, and navigation.
+
+### 🔹 Test Cases  
+
+Here are some test cases to verify the core functionalities of the LinkedIn Clone.
+
+###  1. Login Page  
+| **Test Case** | **Expected Result** |
+|--------------|------------------|
+| Enter valid email and password & click "Login" | User is redirected to the Home Page |
+| Enter invalid email format & click "Login" | Error message: "Enter a valid email" |
+| Leave password blank & click "Login" | Error message: "Passwprd cannot be empty" |
+| Click "Login" without entering anything | Stay on the same page with validation errors |
+
+---
+
+###  2. Home Page (Post Feed)  
+| **Test Case** | **Expected Result** |
+|--------------|------------------|
+| Posts should load dynamically | Posts appear from `posts.json` |
+| Click "Like" on a post | Like count increases & persists after reload |
+| Click "Comment" & submit a comment | Comment should appear in the comment modal |
+| Refresh the page after liking a post | The post remains liked (LocalStorage check) |
+| Click "Connect" in "People you may know" | User moves to "My Connections" section |
+---
+
+###  3. User Profile Page  
+| **Test Case** | **Expected Result** |
+|--------------|------------------|
+| Click on a profile icon | User is redirected to `/profile/:username` (hardcoded username as Ravindra, change the user name in url to display other profile)  |
+| Update bio & job information | New info is saved & persists on reload |
+| Scroll down to  activity section   | Displays user posts with like |
+| Click "Connect" in "People you may know" | User moves to "My Connections" section |
+---
+
+###  4. Job Listings  
+| **Test Case** | **Expected Result** |
+|--------------|------------------|
+| Jobs load from `jobs.json` | Jobs are displayed on the page |
+| Click "Save Job" | Job gets stored in LocalStorage |
+| Click "View Details" | A modal opens with full job details and save functionality|
+| Search for a job title/ company | Results filter dynamically |
+| Check "Show saved jobs only" | Results filter dynamically |
+
+---
+
+###  5. Connections & Networking  
+| **Test Case** | **Expected Result** |
+|--------------|------------------|
+| "People You May Know" section loads users from `users.json` | Profiles appear dynamically |
+| Click "Connect" on a user | User moves to "My Connections" section |
+| Refresh the page after connecting | Connection persists (LocalStorage check) |
+
+---
 ## 🛠 Debugging Issues  
 If you run into problems, here are a few things to check:  
 
@@ -228,7 +312,7 @@ npm run dev
   - If using Vite, confirm it's running on the correct port (default: http://localhost:5173/).
 
 ### 🔹 Styles not loading?
-  - Ensure Bootstrap is imported properly in index.js or App.js.
+  - Ensure Bootstrap is imported properly in `index.js` or `App.js`.
   - Check file paths of external stylesheets.
 
 ### 🔹 Page not found?
@@ -237,23 +321,22 @@ npm run dev
    ```bash
    /*  /index.html  200
    ```
+---
+## 🚀 Future Enhancements  
 
-🧪 Testing the Application
-Since this is a frontend-only app, testing is manual.
+Here are some planned improvements for upcoming versions of the LinkedIn Clone:  
+### 🔹 UI/UX Improvements  
+- **Dark Mode Support**: Allow users to toggle between light and dark themes.
 
-🔹 What to test?
-✔️ UI responsiveness (mobile, tablet, desktop).
-✔️ LocalStorage functionality (likes, saved jobs, connections).
-✔️ Navigation using React Router.
-✔️ JSON data fetching (posts, jobs, profiles).
+### 🔹 Better Search & Filtering  
+- **Search Bar Enhancements**: Implement **autocomplete & suggestions** while searching.
 
-🔹 How to test manually?
-Open Developer Tools (F12) in your browser.
+### 🔹 Authentication System  
+- Add a **secure login system** with **JWT authentication**.  
+- Implement **Google OAuth** for easy sign-in.  
 
-Go to the Console & Network tab to check for errors.
+### 🔹 Notification Page
+- Implementing notification page to get notified.
 
-Clear LocalStorage and reload to test data persistence.
 
-Test all buttons, modals, and navigation.
 
-🎯 Project
