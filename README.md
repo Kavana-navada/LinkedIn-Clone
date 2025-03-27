@@ -79,13 +79,20 @@ Here’s what you can expect from the app:
 ![Login Page](public/screenshots/login.png)  
 
 ### 🏠 Home Feed  
-![Home Feed](public/screenshots/home.png)  
+![Home Page](public/screenshots/Home.png)  
+![Home Page](public/screenshots/MblHome.jpg)  
 
 ### 👤 User Profile  
-![Profile Page](public/screenshots/profile.png)  
+![Profile Page](public/screenshots/Profile.png)  
+![Profile Page](public/screenshots/MblProfile.jpg)  
 
 ### 💼 Job Listings  
-![Job Listings](public/screenshots/jobs.png)  
+![Job Listings](public/screenshots/Job.png)  
+![Job Listings](public/screenshots/SearchJob.jpg)
+
+### 💼 Job Listings  
+![Connections](public/screenshots/Connection.png)  
+![Connections](public/screenshots/MblConnection.jpg)
 
 ---
 ## How to build your own..?
