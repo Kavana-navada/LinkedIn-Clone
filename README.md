@@ -76,23 +76,35 @@ Here’s what you can expect from the app:
 ## 📷 Screenshots  
 
 ### 🔑 Login Page  
-![Login Page](public/screenshots/login.png)  
+<img src="public/screenshots/login.png" alt="Login Page" width="600"/>
 
-### 🏠 Home Feed  
-![Home Page](public/screenshots/Home.png)  
-![Home Page](public/screenshots/MblHome.jpg)  
+### 🏠 Home Page
+<img src="public/screenshots/Home.png" alt="Home Page" width="600"/>
 
 ### 👤 User Profile  
-![Profile Page](public/screenshots/Profile.png)  
-![Profile Page](public/screenshots/MblProfile.jpg)  
+<img src="public/screenshots/Profile.png" alt="Profile Page" width="600"/>  
 
 ### 💼 Job Listings  
-![Job Listings](public/screenshots/Job.png)  
-![Job Listings](public/screenshots/SearchJob.jpg)
+<img src="public/screenshots/Job.png" alt="Job Listings" width="600"/>  
+### 🔗 Connections 
+<img src="public/screenshots/Connection.png" alt="Connections" width="600"/>  
 
-### 💼 Job Listings  
-![Connections](public/screenshots/Connection.png)  
-![Connections](public/screenshots/MblConnection.jpg)
+<p align="center">
+  
+  <img src="public/screenshots/MblHome.jpg" alt="Home Page Mobile" width="250"/>
+  <img src="public/screenshots/MblProfile.jpg" alt="Profile Page Mobile" width="250"/>  
+ 
+  <img src="public/screenshots/MblConnection.jpg" alt="Connections Mobile" width="250"/>  
+</p> 
+
+
+
+
+
+
+ 
+
+
 
 ---
 ## How to build your own..?
