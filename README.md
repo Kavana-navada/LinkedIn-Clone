@@ -139,29 +139,39 @@ Before running the project, make sure you have the following installed:
    The app will start at http://localhost:5317/ (default Vite server).
 
 ## To Upload Files to a GitHub Repository
-  - Open Terminal/Command Prompt: Navigate to project directory.
-  - Initialize Git (if not already initialized):
-    ```sh
+  1. Open Terminal/Command Prompt: Navigate to project directory.
+  2. Initialize Git (if not already initialized):
+  ```sh
     git init
-    ```
-- Add All Files to Git: 
-  ```sh
-  git add .
   ```
-- Commit your changes: 
+  3. Add All Files to Git: 
   ```sh
-  git commit -m "Initial commit"
+    git add .
   ```
-- Copy the Remote Repository URL: In the new repository page on GitHub, the HTTPS URL (e.g., https://github.com/Kavana-navada/LinkedIn-Clone.git](https://github.com/Kavana-navada/LinkedIn-Clone.git) is copied.
-- Add Remote Origin: 
-```sh
-git remote add origin https://github.com/Kavana-navada/LinkedIn-Clone.git
-```
-- Push Files to GitHub:
-```sh
-git push -u origin main
-```
+  Commit your changes: 
+  ```sh
+    git commit -m "Initial commit"
+  ```
+  5. Copy the Remote Repository URL: In the new repository page on GitHub, the HTTPS URL (e.g., [https://github.com/Kavana-navada/LinkedIn-Clone.git](https://github.com/Kavana-navada/LinkedIn-Clone.git) ) is copied.
+  6. Add Remote Origin: 
+  ```sh
+  git remote add origin https://github.com/Kavana-navada/LinkedIn-Clone.git
+  ```
+  7. Push Files to GitHub:
+  ```sh
+  git push -u origin main
+  ```
+## ROLLBACK
+  ```sh
+  git log –oneline
+  ```
+  (This will show a list of previous commits with their unique commit hashes.)
+  ```sh
+  git reset --hard <commit-hash>
+  ```
+ (Replace `<commit-hash>` with the actual commit ID from the log.)
 
+---
 
 ## Project Structure
 ```linkedin-clone/
