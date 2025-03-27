@@ -101,9 +101,10 @@ Here’s what you can expect from the app:
 
 ### 📱 Mobile View 
 <p >
-  <img src="public/screenshots/MblHome.jpg" alt="Home Page Mobile" width="250"/>
-  <img src="public/screenshots/MblProfile.jpg" alt="Profile Page Mobile" width="250"/>  
-  <img src="public/screenshots/MblConnection.jpg" alt="Connections Mobile" width="250"/>  
+  <img src="public/screenshots/MblHome.jpg" alt="Home Page Mobile" width="240"/>
+  <img src="public/screenshots/MblProfile.jpg" alt="Profile Page Mobile" width="240"/> 
+  <img src="public/screenshots/MblJob.jpg" alt="Job Page Mobile" width="240"/>
+  <img src="public/screenshots/MblConnection.jpg" alt="Connections Mobile" width="240"/>  
 </p> 
 
 ---
@@ -161,15 +162,15 @@ Before running the project, make sure you have the following installed:
   ```sh
   git push -u origin main
   ```
-## ROLLBACK
+## Rollback
   ```sh
   git log –oneline
   ```
-  (This will show a list of previous commits with their unique commit hashes.)
+  This will show a list of previous commits with their unique commit hashes.
   ```sh
   git reset --hard <commit-hash>
   ```
- (Replace `<commit-hash>` with the actual commit ID from the log.)
+ Replace `<commit-hash>` with the actual commit ID from the log.
 
 ---
 
@@ -340,7 +341,7 @@ Here are some test cases to verify the core functionalities of the LinkedIn Clon
 | Jobs load from `jobs.json` | Jobs are displayed on the page |
 | Click "Save Job" | Job gets stored in LocalStorage |
 | Click "View Details" | A modal opens with full job details and save functionality|
-| Search for a job title/ company | Results filter dynamically |
+| Search for a job title/company/location | Results filter dynamically |
 | Check "Show saved jobs only" | Results filter dynamically |
 
 ---
